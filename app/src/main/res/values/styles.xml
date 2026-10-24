@@ -1,0 +1,60 @@
+<resources>
+    <!-- Base application theme - Infinite Galaxy -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/twilight_plum</item>
+        <item name="colorPrimaryDark">@color/cosmic_ink</item>
+        <item name="colorAccent">@color/deep_sky</item>
+        <item name="android:windowBackground">@color/background_light</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:statusBarColor">@color/cosmic_ink</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
+
+    <!-- Splash Screen Theme -->
+    <style name="SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@color/cosmic_ink</item>
+        <item name="colorPrimary">@color/twilight_plum</item>
+        <item name="android:statusBarColor">@color/cosmic_ink</item>
+    </style>
+
+    <!-- Card style -->
+    <style name="BusCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardBackgroundColor">@color/white</item>
+    </style>
+
+    <!-- Seat Available style -->
+    <style name="SeatAvailable">
+        <item name="android:background">@drawable/ic_seat_available</item>
+    </style>
+
+    <!-- Search button style -->
+    <style name="SearchButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/deep_sky</item>
+        <item name="cornerRadius">24dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+    </style>
+
+    <!-- Cosmic Button style -->
+    <style name="CosmicButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/deep_sky</item>
+        <item name="cornerRadius">26dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+    </style>
+
+    <!-- Outlined Button style -->
+    <style name="CosmicOutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/deep_sky</item>
+        <item name="strokeWidth">1.5dp</item>
+        <item name="android:textColor">@color/deep_sky</item>
+        <item name="cornerRadius">24dp</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+    </style>
+
+</resources>

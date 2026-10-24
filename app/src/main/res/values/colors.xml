@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Infinite Galaxy color palette - 星屑の海 -->
+    <color name="colorPrimary">#4D4177</color>
+    <color name="colorPrimaryDark">#0B1838</color>
+    <color name="colorAccent">#3A60A0</color>
+
+    <!-- Main brand colors -->
+    <color name="cosmic_ink">#0B1838</color>
+    <color name="twilight_plum">#4D4177</color>
+    <color name="deep_sky">#3A60A0</color>
+    <color name="milky_glow">#88A5E0</color>
+    <color name="cloud_mist">#C8DDF5</color>
+
+    <!-- Neutral colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="text_primary">#0B1838</color>
+    <color name="text_secondary">#5A6B8A</color>
+    <color name="text_hint">#8B9DC3</color>
+    <color name="text_on_dark">#E8EEF7</color>
+    <color name="background_light">#EDF2FA</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="divider">#C8DDF5</color>
+
+    <!-- Seat colors -->
+    <color name="seat_available">#3A60A0</color>
+    <color name="seat_booked">#4D4177</color>
+    <color name="seat_selected">#88A5E0</color>
+    <color name="seat_unavailable">#BDC3C7</color>
+
+    <!-- Status colors -->
+    <color name="success_green">#2ECC71</color>
+    <color name="error_red">#E74C3C</color>
+    <color name="warning_amber">#F39C12</color>
+
+    <!-- Legacy compatibility mapped to Infinite Galaxy -->
+    <color name="blue">#3A60A0</color>
+    <color name="red_primary">#4D4177</color>
+    <color name="green_primary">#3A60A0</color>
+    <color name="orange_promo">#88A5E0</color>
+</resources>

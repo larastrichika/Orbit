@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_light"
+    tools:context=".dashboard_booking">
+
+    <!-- ===== HEADER BAR ===== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:elevation="4dp">
+
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/backarrow"
+            android:padding="6dp"
+            app:tint="@color/text_primary"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/headerFrom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Terminal Pulo..."
+                    android:textSize="16sp"
+                    android:textColor="@color/text_primary"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:maxWidth="120dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" → "
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"/>
+
+                <TextView
+                    android:id="@+id/headerTo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bandung"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_primary"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/headerDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  24 Okt"
+                    android:textSize="14sp"
+                    android:textColor="@color/red_primary"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/busCountText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2677 Bis bis"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  •  "
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary"/>
+                <TextView
+                    android:id="@+id/headerDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sab"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- ===== RADIO BUTTON & RADIO GROUP: KELAS BUS ===== -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="6dp"
+        android:clipToPadding="false">
+
+        <RadioGroup
+            android:id="@+id/radioGroupBusClass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioAllClass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Semua Kelas"
+                android:checked="true"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="12sp"
+                android:textColor="@color/cosmic_ink"
+                android:buttonTint="@color/deep_sky"
+                android:layout_marginEnd="12dp"/>
+
+            <RadioButton
+                android:id="@+id/radioExecutive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Executive"
+                android:fontFamily="@font/poppins"
+                android:textSize="12sp"
+                android:textColor="@color/cosmic_ink"
+                android:buttonTint="@color/deep_sky"
+                android:layout_marginEnd="12dp"/>
+
+            <RadioButton
+                android:id="@+id/radioSleeper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sleeper"
+                android:fontFamily="@font/poppins"
+                android:textSize="12sp"
+                android:textColor="@color/cosmic_ink"
+                android:buttonTint="@color/deep_sky"
+                android:layout_marginEnd="12dp"/>
+
+            <RadioButton
+                android:id="@+id/radioEconomy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Economy"
+                android:fontFamily="@font/poppins"
+                android:textSize="12sp"
+                android:textColor="@color/cosmic_ink"
+                android:buttonTint="@color/deep_sky"/>
+        </RadioGroup>
+    </HorizontalScrollView>
+
+    <!-- ===== FILTER BAR ===== -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="4dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Filter Utama -->
+            <LinearLayout
+                android:id="@+id/filterSortBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@drawable/filter_chip_bg"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="8dp">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_baseline_directions_bus_24"
+                    app:tint="@color/text_primary"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Urutkan dan Filter"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginStart="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" ▾"
+                    android:textSize="10sp"
+                    android:textColor="@color/text_primary"/>
+            </LinearLayout>
+
+            <!-- Operator Bis -->
+            <LinearLayout
+                android:id="@+id/filterOperatorBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@drawable/filter_chip_bg"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="8dp">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_baseline_directions_bus_24"
+                    app:tint="@color/text_primary"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Operator bis"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginStart="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" ▾"
+                    android:textSize="10sp"
+                    android:textColor="@color/text_primary"/>
+            </LinearLayout>
+
+            <!-- Naik & Turun -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Naik &amp; Turun ▾"
+                android:textSize="12sp"
+                android:textColor="@color/text_primary"
+                android:background="@drawable/filter_chip_bg"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="8dp"/>
+
+            <!-- Format Kursi -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Format Kursi ▾"
+                android:textSize="12sp"
+                android:textColor="@color/text_primary"
+                android:background="@drawable/filter_chip_bg"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="8dp"/>
+
+            <!-- Economy -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Economy ▾"
+                android:textSize="12sp"
+                android:textColor="@color/text_primary"
+                android:background="@drawable/filter_chip_bg"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- ===== BUS LIST ===== -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="100dp">
+
+            <ProgressBar
+                android:id="@+id/progressbarseatbooking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:visibility="gone"/>
+
+            <!-- Bus Card 1 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/relativeticketview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Price row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <!-- Operator logo placeholder -->
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="30dp"
+                            android:text="Sinar"
+                            android:textSize="10sp"
+                            android:textColor="@color/red_primary"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:background="@drawable/operator_logo_bg"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:id="@+id/busPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp 120.000"
+                            android:textSize="17sp"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <!-- Time row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="12dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/departureTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="15:30"
+                                android:textSize="22sp"
+                                android:textColor="@color/text_primary"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:id="@+id/departureStation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Terminal Pulo Gebang"
+                                android:textSize="11sp"
+                                android:textColor="@color/text_secondary"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2h"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_secondary"/>
+
+                            <View
+                                android:layout_width="60dp"
+                                android:layout_height="1dp"
+                                android:background="@color/divider"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="end">
+
+                            <TextView
+                                android:id="@+id/arrivalTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="17:30"
+                                android:textSize="22sp"
+                                android:textColor="@color/text_primary"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:id="@+id/arrivalStation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Surapati (Suci)"
+                                android:textSize="11sp"
+                                android:textColor="@color/text_secondary"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Bus name & seats -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/busroutetextonticketedit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sinar Jaya Shuttle, Shuttle Executive 1+1"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_primary"/>
+
+                            <TextView
+                                android:id="@+id/seatonticketedit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="6 dari 8 kursi tersedia"
+                                android:textSize="11sp"
+                                android:textColor="@color/text_secondary"
+                                android:layout_marginTop="2dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Bus Card 2 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="30dp"
+                            android:text="Sinar"
+                            android:textSize="10sp"
+                            android:textColor="@color/red_primary"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:background="@drawable/operator_logo_bg"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp 120.000"
+                            android:textSize="17sp"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="12dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="18:00"
+                                android:textSize="22sp"
+                                android:textColor="@color/text_primary"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Terminal Pulo Gebang"
+                                android:textSize="11sp"
+                                android:textColor="@color/text_secondary"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2h"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_secondary"/>
+
+                            <View
+                                android:layout_width="60dp"
+                                android:layout_height="1dp"
+                                android:background="@color/divider"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="end">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="20:00"
+                                android:textSize="22sp"
+                                android:textColor="@color/text_primary"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Surapati (Suci)"
+                                android:textSize="11sp"
+                                android:textColor="@color/text_secondary"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sinar Jaya Shuttle, Shuttle Executive 1+1"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_primary"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4 dari 8 kursi tersedia"
+                        android:textSize="11sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="2dp"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- "Cari" and "Track" sections -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/serchbustn"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="🔍 Cari Bus"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/red_primary"
+                    app:cornerRadius="24dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/trackbusbtn"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:text="📍 Lacak Bus"
+                    android:textSize="14sp"
+                    android:textColor="@color/green_primary"
+                    app:strokeColor="@color/green_primary"
+                    app:cornerRadius="24dp"/>
+            </LinearLayout>
+
+            <!-- Hidden fields for compatibility with existing Java code -->
+            <TextView
+                android:id="@+id/setdatedate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="25"/>
+
+            <TextView
+                android:id="@+id/day_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="Sab,\nOkt"/>
+
+            <TextView
+                android:id="@+id/editTextonseatbooking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="SB1"/>
+
+            <TextView
+                android:id="@+id/recentbookedtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="Recently booked"/>
+
+            <TextView
+                android:id="@+id/dateonticket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/outboxofbusrouteonbooking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ===== URGENT SNACKBAR-STYLE BANNER ===== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/text_primary"
+        android:gravity="center"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚡  Buru-buru! Bus-bus pada rute ini terisi dengan cepat"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:gravity="center"/>
+    </LinearLayout>
+
+</LinearLayout>

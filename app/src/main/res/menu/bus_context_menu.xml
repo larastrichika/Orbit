@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/context_detail"
+        android:title="Lihat Detail"/>
+    <item
+        android:id="@+id/context_share"
+        android:title="Bagikan"/>
+    <item
+        android:id="@+id/context_favorite"
+        android:title="Tambah Favorit"/>
+</menu>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/textwelcome"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:orientation="vertical"
+    tools:context="com.shreebrahmanitravels.app.login"
+    android:padding="24dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bus_image"
+        android:layout_width="160dp"
+        android:layout_height="64dp"
+        android:src="@drawable/busfinal"
+        android:transitionName="bus_image"/>
+
+    <TextView
+        android:id="@+id/welcomebacktext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Selamat Datang Kembali"
+        android:textColor="@color/cosmic_ink"
+        android:textSize="26sp"
+        android:transitionName="Text"/>
+
+    <TextView
+        android:id="@+id/signintoconttext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/poppins"
+        android:text="Masuk untuk melanjutkan perjalanan Anda"
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp"
+        android:transitionName="signin_tran"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/Username"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            app:boxStrokeColor="@color/deep_sky"
+            app:hintTextColor="@color/deep_sky"
+            android:transitionName="username_transi">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/cosmic_ink"
+                android:drawableStart="@drawable/ic_baseline_account_circle_24"
+                android:drawablePadding="10dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/Password"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Password"
+            app:boxStrokeColor="@color/deep_sky"
+            app:hintTextColor="@color/deep_sky"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/deep_sky"
+            android:transitionName="password_transi">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/cosmic_ink"
+                android:drawableStart="@drawable/ic_baseline_vpn_key_24"
+                android:drawablePadding="10dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- CheckBox Ingat Saya & Forgot Password Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp">
+
+            <CheckBox
+                android:id="@+id/checkboxRemember"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ingat Saya"
+                android:checked="true"
+                android:fontFamily="@font/poppins"
+                android:textSize="13sp"
+                android:textColor="@color/cosmic_ink"
+                android:buttonTint="@color/deep_sky"/>
+
+            <Button
+                android:id="@+id/ForgetText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:elevation="0dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Lupa Password?"
+                android:textColor="@color/deep_sky"
+                android:textSize="12sp"
+                android:textAllCaps="false"/>
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/Go_button_on_login"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="16dp"
+            android:text="MASUK"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/deep_sky"
+            app:cornerRadius="26dp"
+            android:transitionName="button_tran"/>
+
+        <Button
+            android:id="@+id/signupbuttononlogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="#00000000"
+            android:elevation="0dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Pengguna baru? Daftar sekarang"
+            android:textAllCaps="false"
+            android:textColor="@color/twilight_plum"
+            android:textSize="13sp"
+            android:transitionName="SIgnup_transi"/>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:layout_marginTop="12dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/skipsignup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/poppins"
+            android:text="LEWATI MASUK (MODE TAMU)"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            android:letterSpacing="0.05"/>
+    </RelativeLayout>
+
+</LinearLayout>

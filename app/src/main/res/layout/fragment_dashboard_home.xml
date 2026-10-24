@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    tools:context=".Dashboard_home">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ===== TOP HEADER ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gradient_cosmic"
+                android:paddingTop="16dp"
+                android:paddingBottom="12dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- Logo -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/logo_red_bg"
+                        android:padding="8dp"
+                        android:gravity="center">
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/busstop"
+                            app:tint="@color/white"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tiket Bus"
+                        android:textSize="11sp"
+                        android:textColor="@color/cloud_mist"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:layout_marginTop="2dp"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="50dp"
+                    android:background="#44FFFFFF"/>
+
+                <!-- Shuttle Tab -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/ic_baseline_directions_bus_24"
+                            app:tint="@color/milky_glow"/>
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Shuttle"
+                        android:textSize="11sp"
+                        android:textColor="@color/milky_glow"
+                        android:fontFamily="@font/poppins"
+                        android:layout_marginTop="2dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- ===== HERO SECTION ===== -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp">
+
+                <!-- Hero Text -->
+                <LinearLayout
+                    android:id="@+id/heroTextLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tiket Bus"
+                        android:textSize="26sp"
+                        android:textColor="@color/cosmic_ink"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/poppins_bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="&amp; Shuttle"
+                        android:textSize="26sp"
+                        android:textColor="@color/cosmic_ink"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/poppins_bold"/>
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="Pesan tiket bus dengan mudah dan cepat"
+                        android:textSize="13sp"
+                        android:textColor="@color/text_secondary"
+                        android:fontFamily="@font/poppins"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <!-- Bus Illustration -->
+                <ImageView
+                    android:id="@+id/busIllustration"
+                    android:layout_width="130dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/busfront"
+                    android:scaleType="fitCenter"/>
+
+            </RelativeLayout>
+
+            <!-- ===== SEARCH CARD ===== -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="@color/white">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <!-- FROM ROW -->
+                    <LinearLayout
+                        android:id="@+id/fromRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_alignParentTop="true"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingEnd="50dp">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_baseline_directions_bus_24"
+                            app:tint="@color/deep_sky"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginStart="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Dari"
+                                android:textSize="11sp"
+                                android:textColor="@color/text_secondary"
+                                android:fontFamily="@font/poppins"/>
+
+                            <TextView
+                                android:id="@+id/fromText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Terminal Pulo Gebang, Jakarta"
+                                android:textSize="15sp"
+                                android:textColor="@color/cosmic_ink"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:maxLines="1"
+                                android:ellipsize="end"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Divider line -->
+                    <View
+                        android:id="@+id/searchDivider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/fromRow"
+                        android:background="@color/divider"
+                        android:layout_marginStart="36dp"/>
+
+                    <!-- Swap button -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/swapBtn"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="4dp"
+                        app:cardBackgroundColor="@color/deep_sky">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_baseline_arrow_drop_down_24"
+                            app:tint="@color/white"/>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- TO ROW -->
+                    <LinearLayout
+                        android:id="@+id/toRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_below="@id/searchDivider"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingEnd="50dp">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_baseline_directions_bus_24"
+                            app:tint="@color/deep_sky"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginStart="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Ke"
+                                android:textSize="11sp"
+                                android:textColor="@color/text_secondary"
+                                android:fontFamily="@font/poppins"/>
+
+                            <TextView
+                                android:id="@+id/toText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bandung"
+                                android:textSize="15sp"
+                                android:textColor="@color/cosmic_ink"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/poppins_semibold"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Divider line 2 -->
+                    <View
+                        android:id="@+id/searchDivider2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/toRow"
+                        android:background="@color/divider"
+                        android:layout_marginStart="36dp"/>
+
+                    <!-- DATE ROW -->
+                    <LinearLayout
+                        android:id="@+id/dateRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/searchDivider2"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="4dp">
+
+                        <ImageView
+                            android:id="@+id/calendaricon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/calendar"
+                            app:tint="@color/deep_sky"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginStart="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Tanggal perjalanan"
+                                android:textSize="11sp"
+                                android:textColor="@color/text_secondary"
+                                android:fontFamily="@font/poppins"/>
+
+                            <TextView
+                                android:id="@+id/setdatedate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sab 25 Okt"
+                                android:textSize="15sp"
+                                android:textColor="@color/cosmic_ink"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/poppins_semibold"/>
+                        </LinearLayout>
+
+                        <!-- Hari ini button -->
+                        <TextView
+                            android:id="@+id/hariIniBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hari ini"
+                            android:textSize="13sp"
+                            android:textColor="@color/deep_sky"
+                            android:background="@drawable/pill_outline_red"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp"
+                            android:fontFamily="@font/poppins_semibold"/>
+
+                        <!-- Besok button -->
+                        <TextView
+                            android:id="@+id/besokBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Besok"
+                            android:textSize="13sp"
+                            android:textColor="@color/deep_sky"
+                            android:background="@drawable/pill_outline_red"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:layout_marginStart="8dp"/>
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ===== CARI BUS BUTTON ===== -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/serchbustn"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                android:text="🔍  Cari bus"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:fontFamily="@font/poppins_semibold"
+                app:backgroundTint="@color/deep_sky"
+                app:cornerRadius="26dp"/>
+
+            <!-- ===== ABOUT US BUTTON ===== -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/aboutus"
+                style="@style/CosmicOutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="120dp"
+                android:text="Tentang Kami"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_semibold"
+                app:strokeColor="@color/deep_sky"
+                app:strokeWidth="1.5dp"
+                android:textColor="@color/deep_sky"
+                app:cornerRadius="24dp"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

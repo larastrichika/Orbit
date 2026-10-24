@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".otpverify_rideshare"
+            android:exported="false" />
+        <activity
+            android:name=".adding_vehicle"
+            android:exported="false" />
+        <activity
+            android:name=".ui.mainchatbott"
+            android:exported="false" />
+        <activity
+            android:name=".trackbus"
+            android:exported="false" />
+        <activity
+            android:name=".verifyotp_guestbooking"
+            android:exported="false" />
+        <activity
+            android:name=".guestbooking"
+            android:exported="false" />
+        <activity
+            android:name=".guestwarning"
+            android:exported="false" />
+        <activity
+            android:name=".walkthrough"
+            android:noHistory="true"
+            android:exported="false" />
+        <activity
+            android:name=".updatedpasswordsucess"
+            android:exported="false" />
+        <activity
+            android:name=".updatepassword"
+            android:exported="false" />
+        <activity
+            android:name=".bookedsuccesfully"
+            android:exported="false" />
+        <activity
+            android:name=".seatManagement"
+            android:exported="false" />
+        <activity
+            android:name=".Confirmticket"
+            android:exported="false" />
+        <activity
+            android:name=".whyonlinebooking"
+            android:exported="false" />
+        <activity
+            android:name=".feedback"
+            android:exported="false" />
+        <activity
+            android:name=".contact_developer"
+            android:exported="false" />
+        <activity
+            android:name=".Aboutus"
+            android:exported="false" />
+        <activity
+            android:name=".forgetpassword_sucessmsg"
+            android:exported="false" />
+        <activity
+            android:name=".otp_verify_forgotpassword"
+            android:exported="false" />
+        <activity
+            android:name=".signup"
+            android:exported="false" />
+        <activity
+            android:name=".setNewPassword"
+            android:exported="false" />
+        <activity
+            android:name=".otp_verify"
+            android:exported="false" />
+        <activity
+            android:name=".splash_screen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".login"
+            android:exported="false" />
+        <activity
+            android:name=".Forgetpassword"
+            android:exported="false" />
+        <activity
+            android:name=".welcomePage"
+            android:exported="false" />
+        <activity
+            android:name=".HelpActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
